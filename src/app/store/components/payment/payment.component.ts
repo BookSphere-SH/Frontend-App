@@ -23,6 +23,7 @@ export class PaymentComponent implements OnInit {
     });
   }
 
+  // Procesar el pago
   procesarPago(item: CartItem): void {
     if (this.validarPago(item)) {
       console.log(`Pago procesado para ${item.book.titulo}`);

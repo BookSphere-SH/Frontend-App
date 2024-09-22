@@ -22,7 +22,7 @@ export class StoreBooksComponent implements OnInit {
 
   constructor(
     private booksService: BooksService,
-    private cartService: CartService
+    public cartService: CartService
   ) {}
 
   ngOnInit(): void {

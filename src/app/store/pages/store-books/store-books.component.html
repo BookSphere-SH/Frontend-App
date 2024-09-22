@@ -36,8 +36,8 @@
             <p><strong>Precio:</strong> {{ book.precio }}</p>
             <button (click)="addToCart(book)" class="btn btn-primary">Añadir al carrito</button>
             <a (click)="goToDetails(book.id)" class="btn btn-primary">Ver detalles</a>
-            <!-- Deshabilitar si el libro no ha sido pagado -->
-            <button [disabled]="!isBookPaid(book)" (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>
+            <!-- Botón de añadir a la biblioteca habilitado solo si el libro ha sido pagado -->
+            <button [disabled]="!cartService.isBookPaid(book)" (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>
           </div>
         </div>
       </div>

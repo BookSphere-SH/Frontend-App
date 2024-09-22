@@ -16,11 +16,13 @@ export class CartService {
 
   constructor() {}
 
+  // Obtener el carrito del localStorage
   private getCartFromLocalStorage(): CartItem[] {
     const cart = localStorage.getItem('cart');
     return cart ? JSON.parse(cart) : [];
   }
 
+  // Guardar carrito en localStorage
   private saveCartToLocalStorage(cartItems: CartItem[]): void {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }
@@ -30,11 +32,13 @@ export class CartService {
     localStorage.setItem('library', JSON.stringify(library));
   }
 
+  // Obtener la biblioteca del localStorage
   private getLibraryFromLocalStorage(): Book[] {
     const library = localStorage.getItem('library');
     return library ? JSON.parse(library) : [];
   }
 
+  // Añadir libro al carrito
   addToCart(item: CartItem): void {
     const currentCart = this.cartItemsSubject.value;
     const itemExistente = currentCart.find(cartItem => cartItem.book.id === item.book.id);
@@ -49,53 +53,61 @@ export class CartService {
     this.saveCartToLocalStorage(currentCart);
   }
 
-  removeFromCart(bookId: number): void {
-    const currentCart = this.cartItemsSubject.value.filter(item => item.book.id !== bookId);
-    this.cartItemsSubject.next(currentCart);
-    this.saveCartToLocalStorage(currentCart);
-  }
-
-  clearCart(): void {
-    this.cartItemsSubject.next([]);
-    localStorage.removeItem('cart');
-  }
-
   // Marcar libro como pagado y guardar en localStorage
   marcarComoPagado(bookId: number): void {
-    const cartItems = this.cartItemsSubject.value;
-    const item = cartItems.find(cartItem => cartItem.book.id === bookId);
+    const currentCart = this.cartItemsSubject.value;
+    const item = currentCart.find(cartItem => cartItem.book.id === bookId);
+
     if (item) {
       item.book.pagado = true;
-      this.saveCartToLocalStorage(cartItems);
+      this.saveCartToLocalStorage(currentCart); // Actualizar en localStorage
     }
 
-    // Actualizar estado de los libros también en la biblioteca
+    // Actualizar también en la biblioteca
     const allBooks = this.getLibraryFromLocalStorage();
     const bookInLibrary = allBooks.find(book => book.id === bookId);
+
     if (bookInLibrary) {
       bookInLibrary.pagado = true;
+      this.saveLibraryToLocalStorage(allBooks);
     }
-    this.saveLibraryToLocalStorage(allBooks);
   }
 
   // Verificar si un libro ha sido pagado
   isBookPaid(book: Book): boolean {
-    return book.pagado === true;
+    // Verificar si el estado del libro pagado está en el localStorage
+    const cartItems = this.getCartFromLocalStorage();
+    const cartItem = cartItems.find(item => item.book.id === book.id);
+
+    return cartItem ? cartItem.book.pagado === true : false;
   }
 
-  // Añadir a la biblioteca solo si está pagado
+  // Añadir a la biblioteca si el libro está pagado
   addToLibrary(book: Book): void {
     if (this.isBookPaid(book)) {
-      this.libraryBooks.push(book);
-      this.libraryBooksSubject.next(this.libraryBooks);
-      this.saveLibraryToLocalStorage(this.libraryBooks);  // Guardar en localStorage
+      const libraryBooks = this.getLibraryFromLocalStorage();
+      libraryBooks.push(book);
+      this.libraryBooksSubject.next(libraryBooks);
+      this.saveLibraryToLocalStorage(libraryBooks);
       console.log('Libro añadido a la biblioteca');
     } else {
       console.log('El libro no ha sido pagado, no se puede añadir a la biblioteca');
     }
   }
 
+  // Obtener los libros en la biblioteca
   getLibraryBooks(): Book[] {
-    return this.libraryBooks;
+    return this.getLibraryFromLocalStorage();
   }
+removeFromCart(bookId: number): void {
+  const currentCart = this.cartItemsSubject.value.filter(item => item.book.id !== bookId);
+  this.cartItemsSubject.next(currentCart);
+  this.saveCartToLocalStorage(currentCart);
+}
+
+clearCart(): void {
+  this.cartItemsSubject.next([]);
+  localStorage.removeItem('cart');
+}
+
 }
