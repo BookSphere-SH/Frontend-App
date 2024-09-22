@@ -1,0 +1,45 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+button {
+  margin-left: 20px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+.row {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-warning {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}

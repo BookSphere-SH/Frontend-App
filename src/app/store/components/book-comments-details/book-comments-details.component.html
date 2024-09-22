@@ -1,0 +1,44 @@
+<div *ngIf="book" class="container mt-5">
+  <div class="row align-items-center book-detail-row">
+    <div class="col-md-6 text-center">
+      <img [src]="book.portada" alt="Portada de {{ book.titulo }}" class="img-fluid book-cover">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ book.titulo }}</h2>
+      <p><strong>Descripción:</strong> {{ book.descripcion }}</p>
+      <p><strong>Resumen:</strong> {{ book.resumen }}</p>
+      <p><strong>Precio:</strong> {{ book.precio }}</p>
+
+      <!-- Selección de formato -->
+      <div class="form-group">
+        <label for="formato">Formato disponible: </label>
+        <div>
+          <button class="btn btn-secondary" (click)="seleccionarFormato('físico')">Físico</button>
+          o
+          <button class="btn btn-secondary" (click)="seleccionarFormato('digital')">Digital</button>
+        </div>
+      </div>
+
+      <!-- Botón de pago -->
+
+    </div>
+  </div>
+
+  <!-- Sección de comentarios -->
+  <div class="comments-section mt-5">
+    <h3>Comentarios de los usuarios</h3>
+
+    <!-- Listar comentarios -->
+    <div *ngFor="let comment of book.comments" class="comment-card mt-3 p-3 border rounded">
+      <h5>{{ comment.username }}</h5>
+      <p><strong>Fecha:</strong> {{ comment.date | date:'medium' }}</p>
+      <p><strong>Comentario:</strong> {{ comment.content }}</p>
+      <p><strong>Calificación:</strong> {{ comment.rating }}/5</p>
+    </div>
+
+    <!-- Si no hay comentarios -->
+    <div *ngIf="book.comments.length === 0" class="alert alert-info mt-3">
+      No hay comentarios disponibles para este libro.
+    </div>
+  </div>
+</div>

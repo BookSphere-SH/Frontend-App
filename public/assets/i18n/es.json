@@ -1,0 +1,23 @@
+{
+  "filter": {
+    "label": "Filtrar",
+    "placeholder": "Digite texto a filtrar"
+  },
+  "title": {
+    "students": "Estudiantes",
+    "add": "Nuevo estudiante",
+    "edit": "Editar estudiante"
+  },
+  "student": {
+    "id": "Núm.",
+    "name": "Nombre",
+    "age": "Edad",
+    "address": "Dirección",
+    "actions": "Acciones"
+  },
+  "footer": {
+    "rights": "Derechos de autor © 2024 {{ api }}, Todos los derechos reservados",
+    "intro": "Desarrollado ",
+    "author": "por el Equipo {{ team }}"
+  }
+}

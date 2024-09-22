@@ -1,0 +1,28 @@
+<div class="library-container" *ngIf="library.length > 0; else noBooksMessage">
+  <div class="row">
+    <!-- Recorre los libros en la biblioteca -->
+    <div class="col-md-4 mb-4" *ngFor="let book of library">
+      <div class="card h-100 shadow-lg">
+        <!-- Portada del libro -->
+        <img [src]="book.portada" class="card-img-top" alt="Portada de {{ book.titulo }}" style="height: 300px; object-fit: cover;">
+        <div class="card-body">
+          <!-- Título del libro -->
+          <h5 class="card-title">{{ book.titulo }}</h5>
+          <!-- Descripción del libro -->
+          <p class="card-text">{{ book.descripcion }}</p>
+          <!-- Precio del libro -->
+          <p><strong>Precio:</strong> {{ book.precio }}</p>
+          <!-- Botones de acción -->
+          <button (click)="addToCart(book)" class="btn btn-primary mb-2">Añadir al carrito</button>
+          <a (click)="goToDetails(book.id)" class="btn btn-secondary mb-2">Ver detalles</a>
+          <button (click)="removeFromLibrary(book.id)" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje cuando no hay libros en la biblioteca -->
+<ng-template #noBooksMessage>
+  <p class="alert alert-warning text-center">No tienes libros en tu biblioteca.</p>
+</ng-template>

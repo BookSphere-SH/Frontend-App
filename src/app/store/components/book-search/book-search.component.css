@@ -1,0 +1,45 @@
+.book-search-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-search-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 8px;
+}
+
+.search-results {
+  margin-top: 20px;
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.search-results li {
+  padding: 5px;
+  background-color: #eef;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}

@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="Buscar por título..."
+        [(ngModel)]="filterTitle"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="category">Categoría:</label>
+      <select
+        class="form-control"
+        id="category"
+        [(ngModel)]="searchCategory"
+      >
+        <option value="">Seleccionar categoría...</option>
+        <option value="realismo mágico">Realismo mágico</option>
+        <option value="distopía">Distopía</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let book of filteredBooks()">
+        <div class="card h-100 shadow-lg">
+          <img [src]="book.portada" class="card-img-top" alt="Portada de {{ book.titulo }}" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.titulo }}</h5>
+            <p class="card-text">{{ book.resumen }}</p>
+            <p><strong>Precio:</strong> {{ book.precio }}</p>
+            <button (click)="addToCart(book)" class="btn btn-primary">Añadir al carrito</button>
+            <a (click)="goToDetails(book.id)" class="btn btn-primary">Ver detalles</a>
+            <!-- Deshabilitar si el libro no ha sido pagado -->
+            <button [disabled]="!isBookPaid(book)" (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="noResults" class="alert alert-warning">
+      No se encontraron libros para la búsqueda.
+    </div>
+  </div>
+</div>

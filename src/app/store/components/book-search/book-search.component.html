@@ -1,0 +1,13 @@
+<div class="store">
+
+
+  <div *ngIf="filteredBooks.length > 0">
+    <div *ngFor="let book of filteredBooks" class="book-card">
+      <img [src]="book.portada" alt="Portada del libro" style="width:100px;">
+      <h3>{{ book.titulo }}</h3>
+      <p>{{ book.categoria }}</p>
+    </div>
+  </div>
+
+
+</div>

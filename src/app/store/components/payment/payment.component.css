@@ -1,0 +1,36 @@
+.payment-logo {
+  width: 35px;  /* Reduce el tamaño de las imágenes */
+  height: auto;
+  margin: 0 10px;  /* Añade un pequeño margen entre las imágenes */
+}
+
+.payment-cover {
+  height: 250px;
+  object-fit: cover;
+}
+
+.book-info h3, .book-info p {
+  margin: 10px 0;
+}
+
+.payment-options h5 {
+  margin: 20px 0 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Asegura que las imágenes no se desborden */
+.payment-logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 200px;  /* Ajusta el tamaño máximo del contenedor */
+  margin: 0 auto;  /* Centra el contenedor de imágenes */
+}

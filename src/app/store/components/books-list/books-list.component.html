@@ -1,0 +1,10 @@
+<div class="cards-wrapper">
+  <div *ngFor="let book of books" class="book-card">
+    <img [src]="book.portada" alt="Cover of {{ book.titulo }}" class="book-cover">
+    <div class="book-info">
+      <h3>{{ book.titulo }}</h3>
+      <p>{{ book.resumen }}</p>
+      <button (click)="viewDetails(book.id)">View Details</button>
+    </div>
+  </div>
+</div>

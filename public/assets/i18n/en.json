@@ -1,0 +1,23 @@
+{
+  "filter": {
+    "label": "Filter",
+    "placeholder": "Enter text to filter"
+  },
+  "title": {
+    "students": "Students",
+    "add": "New Student",
+    "edit": "Edit Student"
+  },
+  "student": {
+    "id": "No.",
+    "name": "Name",
+    "age": "Age",
+    "address": "Address",
+    "actions": "Actions"
+  },
+  "footer": {
+    "rights": "Copyright © 2024 {{ api }}, All rights reserved",
+    "intro": "Developed ",
+    "author": "by {{ team }} Team"
+  }
+}
