@@ -1,19 +1,307 @@
 {
-  "posts": [
+  "book": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": "1",
+      "autor": "Gabriel García Márquez",
+      "titulo": "Cien años de soledad",
+      "descripcion": "Una de las obras más representativas del realismo mágico, escrita por el ganador del Premio Nobel Gabriel García Márquez. La novela narra la historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo, un lugar donde lo extraordinario y lo sobrenatural conviven con la vida cotidiana.",
+      "resumen": "Cien años de soledad sigue la vida de los Buendía, desde su fundador José Arcadio Buendía, hasta su última generación. La novela retrata temas como el amor, la soledad, la fatalidad, la historia cíclica y el poder del destino.",
+      "fecha_publicacion": "1967-06-05",
+      "isbn": "978-0307474728",
+      "formato": "Tapa blanda",
+      "precio": "$0.00",
+      "categoria": "Realismo mágico",
+      "ruta_archivo": "https://www.sev.gob.mx/clasesdesdecasa/documentos/c8cf01c83fcd163f06e727cabcff90ac100-a%C3%B1os-de-soledad-Gabriel-Garc%C3%ADa-Marquez.pdf",
+      "portada": "https://images.cdn3.buscalibre.com/fit-in/360x360/61/8d/618d227e8967274cd9589a549adff52d.jpg",
+      "pagado": false,
+      "comments": [
+        {
+          "id": 1,
+          "username": "Juan Pérez",
+          "content": "Una obra magnífica que mezcla la magia y la realidad de manera impecable. Me encantó cada detalle de la familia Buendía.",
+          "rating": 5,
+          "date": "2023-09-19 10:30 AM"
+        },
+        {
+          "id": 2,
+          "username": "Laura García",
+          "content": "El estilo de narración es envolvente, pero en algunos momentos puede volverse un poco denso. Aún así, lo recomiendo.",
+          "rating": 4,
+          "date": "2023-09-18 04:45 PM"
+        }
+      ]
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "2",
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "descripcion": "Escrita por George Orwell, 1984 es una novela distópica que explora un mundo donde el gobierno controla todos los aspectos de la vida, desde el pensamiento hasta la historia misma. El término 'Gran Hermano' proviene de esta novela y simboliza la vigilancia extrema.",
+      "resumen": "Winston Smith trabaja para el Partido, el gobierno totalitario que manipula la verdad y espía a sus ciudadanos. A través de su narrativa, Orwell aborda temas como la propaganda, la opresión política, y el control del lenguaje como una herramienta para el poder.",
+      "fecha_publicacion": "1949-06-08",
+      "isbn": "978-0451524935",
+      "formato": "Tapa dura",
+      "precio": "$0.00",
+      "categoria": "Distopía",
+      "ruta_archivo": "https://ocw.uca.es/pluginfile.php/1485/mod_resource/content/1/1984.pdf",
+      "portada": "https://www.laorquestafilosofica.com/wp-content/uploads/2018/01/externo-4c157cb101737ebd5e9f10f29aa31730.jpg",
+      "pagado": false,
+      "comments": [
+        {
+          "id": 1,
+          "username": "Carlos Ruiz",
+          "content": "Una historia inquietante pero fascinante. Orwell realmente predijo el futuro en muchas formas.",
+          "rating": 5,
+          "date": "2023-09-17 09:00 AM"
+        },
+        {
+          "id": 2,
+          "username": "Ana López",
+          "content": "El control del gobierno en la vida de las personas que se muestra en este libro da miedo. Es una lectura obligada.",
+          "rating": 4,
+          "date": "2023-09-16 03:50 PM"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "titulo": "El gran Gatsby",
+      "autor": "F. Scott Fitzgerald",
+      "descripcion": "Una de las novelas más icónicas de la literatura estadounidense, escrita por F. Scott Fitzgerald. El gran Gatsby se centra en la vida de Jay Gatsby, un hombre misterioso y adinerado, y su obsesión por recuperar el amor perdido de Daisy Buchanan.",
+      "resumen": "A través de los ojos del narrador Nick Carraway, Fitzgerald revela las contradicciones del sueño americano: riqueza, ambición y corrupción moral. La historia refleja la vida en la alta sociedad de Nueva York en los años 20, y cómo el dinero no puede comprar la felicidad o cambiar el pasado.",
+      "fecha_publicacion": "1925-04-10",
+      "isbn": "978-0743273565",
+      "formato": "Tapa blanda",
+      "precio": "$0.00",
+      "categoria": "Literatura estadounidense",
+      "ruta_archivo": "https://www.imprentanacional.go.cr/editorialdigital/libros/literatura%20universal/el_gran_gatsby_edincr.pdf",
+      "portada": "https://beta.acuedi.org/storage/books/cover/10411.pdf.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Mario Torres",
+          "content": "La decadencia y los excesos de los años 20 capturados en una novela trágica. Gatsby es un personaje inolvidable.",
+          "rating": 5,
+          "date": "2023-09-15 01:00 PM"
+        },
+        {
+          "id": 2,
+          "username": "Sofía Martínez",
+          "content": "Una novela que refleja las ilusiones de la vida y cómo el dinero no puede comprar la felicidad.",
+          "rating": 4,
+          "date": "2023-09-14 05:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "titulo": "Matar a un ruiseñor",
+      "autor": "Harper Lee",
+      "descripcion": "Una novela escrita por Harper Lee que se adentra en la injusticia racial en el sur de Estados Unidos durante la Gran Depresión. A través de los ojos de la joven Scout Finch, se observa el juicio de un hombre negro acusado falsamente de violar a una mujer blanca.",
+      "resumen": "El padre de Scout, Atticus Finch, abogado y modelo de integridad moral, defiende al hombre acusado, lo que genera tensiones en la comunidad. La novela aborda temas como la moralidad, la empatía y el prejuicio, convirtiéndose en un llamado a la justicia y la igualdad.",
+      "fecha_publicacion": "1960-07-11",
+      "isbn": "978-0060935467",
+      "formato": "Tapa dura",
+      "precio": "$0.00",
+      "categoria": "Novela clásica",
+      "ruta_archivo": "https://web.seducoahuila.gob.mx/biblioweb/upload/Harper,%20Lee%20-%20Matar%20Un%20Ruise%C3%B1or.pdf",
+      "portada": "https://img.perlego.com/book-covers/3633976/9780063026032.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Gabriel Mendoza",
+          "content": "Una historia conmovedora sobre la lucha por la justicia en tiempos de gran desigualdad.",
+          "rating": 5,
+          "date": "2023-09-14 08:00 AM"
+        },
+        {
+          "id": 2,
+          "username": "Clara González",
+          "content": "Una lectura poderosa que toca temas muy importantes. Muy recomendable.",
+          "rating": 5,
+          "date": "2023-09-13 02:30 PM"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "titulo": "Sumérgete en los Patrones de Diseño",
+      "autor": "No especificado",
+      "descripcion": "Este libro es una guía moderna y detallada sobre cómo aplicar patrones de diseño a proyectos de software. Es ideal para desarrolladores que desean mejorar la arquitectura de sus sistemas y escribir código más limpio y escalable.",
+      "resumen": "A través de ejemplos claros y concisos, el libro cubre los patrones de diseño más populares, como el Singleton, el Adapter y el Observer, mostrando cómo se pueden implementar en lenguajes de programación modernos. Ideal tanto para principiantes como para programadores experimentados.",
+      "fecha_publicacion": "2022-07-15",
+      "isbn": "978-1492052203",
+      "formato": "Tapa dura",
+      "precio": "$30.00",
+      "categoria": "Programación",
+      "ruta_archivo": "https://refactoring.guru/es/design-patterns/book",
+      "portada": "https://refactoring.guru/images/patterns/book/web-cover-es.png",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Andrés Navarro",
+          "content": "Un libro imprescindible para cualquier desarrollador de software que quiera escribir código eficiente y reutilizable.",
+          "rating": 5,
+          "date": "2023-09-19 11:15 AM"
+        },
+        {
+          "id": 2,
+          "username": "Daniela Castro",
+          "content": "Muy útil para entender los patrones de diseño, aunque algunos ejemplos son un poco avanzados.",
+          "rating": 4,
+          "date": "2023-09-18 02:45 PM"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "titulo": "El algoritmo maestro: Cómo la búsqueda del algoritmo definitivo remodelará nuestro mundo",
+      "autor": "Pedro Domingos",
+      "descripcion": "Escrito por Pedro Domingos, este libro ofrece una fascinante exploración del aprendizaje automático y cómo los algoritmos están transformando industrias enteras, desde la medicina hasta las finanzas.",
+      "resumen": "Domingos presenta las cinco corrientes principales del aprendizaje automático y explica cómo se pueden combinar en lo que él llama el 'algoritmo maestro', un algoritmo que podría aprender cualquier tarea humana. Una lectura esencial para cualquiera interesado en la inteligencia artificial y su impacto en el mundo.",
+      "fecha_publicacion": "2021-01-12",
+      "isbn": "978-0465065707",
+      "formato": "Tapa blanda",
+      "precio": "$10.00",
+      "categoria": "Inteligencia Artificial",
+      "ruta_archivo": "https://archive.org/details/the-master-algorithm",
+      "portada": "https://cdn.bookey.app/files/publish-book/the-master-algorithm.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "María Rojas",
+          "content": "Una visión increíble del futuro de la inteligencia artificial. Explica temas complejos de manera sencilla.",
+          "rating": 5,
+          "date": "2023-09-17 09:30 AM"
+        },
+        {
+          "id": 2,
+          "username": "Jorge Paredes",
+          "content": "Interesante, aunque algunas partes del libro son demasiado técnicas para quienes no están familiarizados con el aprendizaje automático.",
+          "rating": 4,
+          "date": "2023-09-16 06:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "titulo": "The Pragmatic Programmer: Your Journey to Mastery",
+      "autor": "Dave Thomas y Andy Hunt",
+      "descripcion": "Una obra clásica en el mundo del desarrollo de software que ofrece consejos prácticos y principios fundamentales para programadores de todos los niveles. Escrito por Dave Thomas y Andy Hunt, este libro enseña cómo ser un programador más eficiente y adaptable.",
+      "resumen": "Desde la escritura de código limpio hasta la gestión de proyectos, The Pragmatic Programmer cubre una amplia gama de temas importantes para los desarrolladores. Cada capítulo está lleno de anécdotas y ejemplos que ayudan a mejorar las habilidades de programación en la vida real.",
+      "fecha_publicacion": "2019-09-13",
+      "isbn": "978-0135957059",
+      "formato": "Tapa blanda",
+      "precio": "$37.99",
+      "categoria": "Programación",
+      "ruta_archivo": "https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052",
+      "portada": "https://m.media-amazon.com/images/I/41as+WafrFL._SX404_BO1,204,203,200_.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Carlos Vargas",
+          "content": "Este libro cambió completamente mi enfoque sobre cómo escribir y gestionar código. Altamente recomendado.",
+          "rating": 5,
+          "date": "2023-09-19 12:00 PM"
+        },
+        {
+          "id": 2,
+          "username": "Silvia Delgado",
+          "content": "Un libro con consejos prácticos y aplicables, ideal para programadores de todos los niveles.",
+          "rating": 4,
+          "date": "2023-09-18 05:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "titulo": "Deep Learning with Python",
+      "autor": "François Chollet",
+      "descripcion": "Escrito por François Chollet, creador de la biblioteca Keras, este libro ofrece una introducción clara y práctica al aprendizaje profundo (deep learning) con Python. Es ideal para aquellos que desean aprender a implementar redes neuronales profundas.",
+      "resumen": "A lo largo del libro, Chollet proporciona ejemplos prácticos y tutoriales que cubren temas como redes neuronales convolucionales, aprendizaje supervisado y no supervisado, y cómo aplicar estas técnicas a problemas del mundo real como el reconocimiento de imágenes y el procesamiento del lenguaje natural.",
+      "fecha_publicacion": "2021-01-21",
+      "isbn": "978-1617296868",
+      "formato": "Tapa blanda",
+      "precio": "$37.99",
+      "categoria": "Inteligencia Artificial",
+      "ruta_archivo": "https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617296864",
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Publication116/v4/45/d7/9f/45d79f50-fcb4-ab23-8bc0-65e4abc144d8/9781638350095.jpg/1200x1200wz.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Luisa Castillo",
+          "content": "Perfecto para los que quieren entrar en el mundo del deep learning. Los ejemplos son muy claros y aplicables.",
+          "rating": 5,
+          "date": "2023-09-19 03:15 PM"
+        },
+        {
+          "id": 2,
+          "username": "Manuel Rivera",
+          "content": "El libro explica bien los conceptos, pero algunos ejemplos pueden ser difíciles para principiantes totales.",
+          "rating": 4,
+          "date": "2023-09-18 07:45 PM"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "titulo": "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
+      "autor": "Morgan Housel",
+      "descripcion": "Este libro de Morgan Housel aborda cómo nuestras emociones y decisiones afectan nuestras finanzas, ofreciendo lecciones atemporales sobre riqueza, avaricia y felicidad.",
+      "resumen": "Housel explora cómo el comportamiento humano influye en nuestras decisiones financieras. Utiliza historias y estudios de caso para ilustrar cómo la mentalidad y las emociones juegan un papel clave en la acumulación de riqueza y cómo tomar decisiones más racionales en cuanto al dinero puede mejorar nuestra vida.",
+      "fecha_publicacion": "2020-09-08",
+      "isbn": "978-0857197689",
+      "formato": "Tapa dura",
+      "precio": "$19.99",
+      "categoria": "Psicología financiera",
+      "ruta_archivo": "https://www.amazon.com/Psychology-Money-Timeless-lessons-happiness/dp/0857197681",
+      "portada": "https://images.cdn1.buscalibre.com/fit-in/360x360/c2/c3/c2c37a6b510585dfa3c775921721b02a.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Rosa Fernández",
+          "content": "Una gran lectura para comprender cómo las emociones influyen en nuestras decisiones financieras.",
+          "rating": 5,
+          "date": "2023-09-17 11:30 AM"
+        },
+        {
+          "id": 2,
+          "username": "Alejandro Gómez",
+          "content": "Me abrió los ojos en cuanto a cómo pienso sobre el dinero. Recomiendo este libro a cualquier persona que quiera mejorar sus finanzas.",
+          "rating": 5,
+          "date": "2023-09-16 02:15 PM"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "titulo": "Sapiens: A Brief History of Humankind",
+      "autor": "Yuval Noah Harari",
+      "descripcion": "Una obra maestra de Yuval Noah Harari que ofrece una visión profunda y completa de la historia de la humanidad, desde la evolución de los Homo sapiens hasta la revolución digital.",
+      "resumen": "Harari examina cómo el Homo sapiens ha llegado a dominar el planeta, explorando revoluciones clave como la cognitiva, la agrícola y la científica. El libro aborda cuestiones de biología, historia y antropología, proporcionando un análisis detallado de cómo llegamos hasta donde estamos y hacia dónde nos dirigimos.",
+      "fecha_publicacion": "2015-02-10",
+      "isbn": "978-0062316110",
+      "formato": "Tapa dura",
+      "precio": "$22.99",
+      "categoria": "Historia",
+      "ruta_archivo": "https://www.amazon.com/Sapiens-Brief-History-Humankind/dp/0062316117",
+      "portada": "https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UL320_.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Miguel Salinas",
+          "content": "Un libro increíble que cambia la forma de ver la historia humana. Recomendado para todos.",
+          "rating": 5,
+          "date": "2023-09-19 10:45 AM"
+        },
+        {
+          "id": 2,
+          "username": "Lucía Valencia",
+          "content": "Este libro te hace reflexionar sobre el impacto de la humanidad en el mundo. Me dejó pensando por días.",
+          "rating": 5,
+          "date": "2023-09-18 06:15 PM"
+        }
+      ]
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+
+  ]
 }
