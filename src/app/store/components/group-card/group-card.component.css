@@ -1,0 +1,29 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    margin-left: 25px;
+}
+
+.card img{
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+.card .datas{
+    margin-left: 15px;
+}
+.card .datas .title{
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0;
+}
+.card .datas .details{
+    font-style: italic;
+}
+.card .datas .description{
+    font-size: 1.2rem;
+}
