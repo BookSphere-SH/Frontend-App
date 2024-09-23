@@ -51,7 +51,17 @@ export class PaymentComponent implements OnInit {
     return true;
   }
 
+  // Método para actualizar el precio cuando se cambia el formato
+  actualizarPrecio(item: CartItem): number {
+    if (item.formato === 'físico') {
+      return item.book.precio;  // Precio + $8 por formato físico
+    }
+    return item.book.precio;
+  }
+
   getTotal(): number {
-    return this.cartItems.reduce((total, item) => total + item.book.precio, 0);
+    return this.cartItems.reduce((total, item) => {
+      return total + this.actualizarPrecio(item);
+    }, 0);
   }
 }

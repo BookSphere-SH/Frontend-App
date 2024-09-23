@@ -8,11 +8,14 @@ import { Book } from '../model/book-entity/book.entity';
 })
 export class CartService {
   private cartItemsSubject = new BehaviorSubject<CartItem[]>(this.getCartFromLocalStorage());
-  cartItems$ = this.cartItemsSubject.asObservable();
+    cartItems$ = this.cartItemsSubject.asObservable();
 
-  private libraryBooks: Book[] = [];
-  private libraryBooksSubject = new BehaviorSubject<Book[]>(this.getLibraryFromLocalStorage());
-  libraryBooks$ = this.libraryBooksSubject.asObservable();
+    private libraryBooks: Book[] = [];
+    private libraryBooksSubject = new BehaviorSubject<Book[]>(this.getLibraryFromLocalStorage());
+    libraryBooks$ = this.libraryBooksSubject.asObservable();
+
+    public maxBooksWithoutPayment = 4;  // Límite de 4 libros antes de solicitar pago adicional
+    public additionalPaymentRequired = false;   // Indica si es necesario el pago adicional
 
   constructor() {}
 
@@ -41,12 +44,14 @@ export class CartService {
   // Añadir libro al carrito
   addToCart(item: CartItem): void {
     const currentCart = this.cartItemsSubject.value;
-    const itemExistente = currentCart.find(cartItem => cartItem.book.id === item.book.id);
+    const existingItem = currentCart.find(cartItem => cartItem.book.id === item.book.id);
 
-    if (itemExistente) {
-      itemExistente.cantidad++;
+    if (existingItem) {
+      existingItem.cantidad++;
+      window.alert('Este libro ya está en tu carrito. Se ha incrementado la cantidad.');
     } else {
       currentCart.push(item);
+      window.alert('Libro añadido al carrito.');
     }
 
     this.cartItemsSubject.next(currentCart);
@@ -75,7 +80,6 @@ export class CartService {
 
   // Verificar si un libro ha sido pagado
   isBookPaid(book: Book): boolean {
-    // Verificar si el estado del libro pagado está en el localStorage
     const cartItems = this.getCartFromLocalStorage();
     const cartItem = cartItems.find(item => item.book.id === book.id);
 
@@ -84,11 +88,28 @@ export class CartService {
 
   // Añadir a la biblioteca si el libro está pagado
   addToLibrary(book: Book): void {
+    const libraryBooks = this.getLibraryFromLocalStorage();
+
+    if (this.isBookInLibrary(book)) {
+      window.alert('Este libro ya está en tu biblioteca.');
+      return;
+    }
+
+    if (this.additionalPaymentRequired) {
+      window.alert('Debes pagar $5 adicionales para añadir más libros a tu biblioteca.');
+      return;
+    }
+
     if (this.isBookPaid(book)) {
-      const libraryBooks = this.getLibraryFromLocalStorage();
       libraryBooks.push(book);
       this.libraryBooksSubject.next(libraryBooks);
       this.saveLibraryToLocalStorage(libraryBooks);
+
+      // Si alcanza el límite de 4 libros, solicitar pago adicional
+      if (libraryBooks.length >= this.maxBooksWithoutPayment) {
+        this.additionalPaymentRequired = true;
+        window.alert('Has añadido 4 libros. Debes pagar $5 para añadir más.');
+      }
       console.log('Libro añadido a la biblioteca');
     } else {
       console.log('El libro no ha sido pagado, no se puede añadir a la biblioteca');
@@ -99,15 +120,28 @@ export class CartService {
   getLibraryBooks(): Book[] {
     return this.getLibraryFromLocalStorage();
   }
-removeFromCart(bookId: number): void {
-  const currentCart = this.cartItemsSubject.value.filter(item => item.book.id !== bookId);
-  this.cartItemsSubject.next(currentCart);
-  this.saveCartToLocalStorage(currentCart);
-}
 
-clearCart(): void {
-  this.cartItemsSubject.next([]);
-  localStorage.removeItem('cart');
-}
+  removeFromCart(bookId: number): void {
+    const currentCart = this.cartItemsSubject.value.filter(item => item.book.id !== bookId);
+    this.cartItemsSubject.next(currentCart);
+    this.saveCartToLocalStorage(currentCart);
+  }
+
+  clearCart(): void {
+    this.cartItemsSubject.next([]);
+    localStorage.removeItem('cart');
+  }
+
+  // Método para verificar si el libro ya está en la biblioteca
+  isBookInLibrary(book: Book): boolean {
+    const libraryBooks = this.getLibraryBooks();
+    return libraryBooks.some(libraryBook => libraryBook.id === book.id);
+  }
+
+  // Método para resetear el contador después de pagar los $5 adicionales
+  pagarPorMasLibros(): void {
+    this.additionalPaymentRequired = false;
+    window.alert('Has pagado $5 adicionales. Puedes agregar 4 libros más.');
+  }
 
 }

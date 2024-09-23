@@ -1,5 +1,59 @@
+<div *ngIf="cartService.additionalPaymentRequired" class="mt-5 p-4 border rounded shadow bg-light">
+  <h5 class="text-center">Límite alcanzado</h5>
+  <p class="text-center">Has alcanzado el límite de 4 libros en tu biblioteca. Debes pagar <strong>$5</strong> para añadir más libros.</p>
+
+  <!-- Simulación de tarjeta de crédito -->
+  <div class="credit-card-container mx-auto">
+    <div class="credit-card mb-4 shadow">
+      <div class="credit-card-details">
+        <div class="credit-card-number text-center">
+          <h6> {{ numeroTarjeta.slice(-16) || 'XXXX' }}</h6>
+        </div>
+        <div class="credit-card-info">
+          <div>
+            <small>Titular</small>
+            <p class="m-0">Nombre Apellido</p>
+          </div>
+          <div>
+            <small>Expira</small>
+            <p class="m-0">{{ fechaExpiracion || 'MM/AA' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario de pago -->
+  <form (ngSubmit)="procesarPago()" class="p-3">
+    <div class="form-group mb-3">
+      <label for="numeroTarjeta">Número de Tarjeta</label>
+      <input type="text" id="numeroTarjeta" class="form-control" [(ngModel)]="numeroTarjeta" name="numeroTarjeta" required maxlength="16" placeholder="1234 5678 9101 1121">
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="fechaExpiracion">Fecha de Expiración (MM/AA)</label>
+          <input type="text" id="fechaExpiracion" class="form-control" [(ngModel)]="fechaExpiracion" name="fechaExpiracion" required maxlength="5" placeholder="MM/AA">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="codigoSeguridad">Código de Seguridad (CVV)</label>
+          <input type="text" id="codigoSeguridad" class="form-control" [(ngModel)]="codigoSeguridad" name="codigoSeguridad" required maxlength="3" placeholder="123">
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-warning w-100">Pagar $5</button>
+    </div>
+  </form>
+</div>
 <div class="container mt-5">
   <div class="row">
+    <!-- Mostrar input para buscar por título y categoría -->
     <div class="form-group">
       <label for="title">Título:</label>
       <input
@@ -28,6 +82,7 @@
         <option value="psicología financiera">Psicología financiera</option>
         <option value="historia">Historia</option>
       </select>
+      <br>
     </div>
   </div>
 
@@ -42,12 +97,13 @@
             <p><strong>Precio:</strong> {{ book.precio }}</p>
             <button (click)="addToCart(book)" class="btn btn-primary">Añadir al carrito</button>
             <a (click)="goToDetails(book.id)" class="btn btn-primary">Ver detalles</a>
-            <!-- Botón de añadir a la biblioteca habilitado solo si el libro ha sido pagado -->
-            <button [disabled]="!cartService.isBookPaid(book)" (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>
+            <button (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>
           </div>
         </div>
       </div>
     </div>
+
+
 
     <div *ngIf="noResults" class="alert alert-warning">
       No se encontraron libros para la búsqueda.

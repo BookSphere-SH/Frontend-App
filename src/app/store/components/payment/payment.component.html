@@ -19,7 +19,7 @@
       <div class="col-lg-6 text-center book-info">
         <img [src]="item.book.portada" alt="Portada del libro" class="img-fluid payment-cover">
         <h3 class="mt-3">{{ item.book.titulo }}</h3>
-        <p><strong>Precio:</strong> {{ item.book.precio }}</p>
+        <p><strong>Precio:</strong> {{ actualizarPrecio(item)}}</p>
 
         <!-- Selector para elegir formato físico o digital -->
         <div class="form-group" *ngIf="item.book">

@@ -20,6 +20,11 @@ export class StoreBooksComponent implements OnInit {
   searchCategory: string = '';
   noResults: boolean = false;
 
+  // Variables para datos de pago
+  numeroTarjeta: string = '';
+  fechaExpiracion: string = '';
+  codigoSeguridad: string = '';
+
   constructor(
     private booksService: BooksService,
     public cartService: CartService
@@ -48,7 +53,6 @@ export class StoreBooksComponent implements OnInit {
     this.cartService.addToCart(cartItem);
   }
 
-  // Verifica si el libro ha sido pagado antes de añadir a la biblioteca
   addToLibrary(book: Book) {
     this.cartService.addToLibrary(book);
   }
@@ -59,5 +63,18 @@ export class StoreBooksComponent implements OnInit {
 
   goToDetails(bookId: number): void {
     window.location.href = `/books/${bookId}`;
+  }
+
+  // Método para procesar el pago
+  procesarPago(): void {
+    if (this.numeroTarjeta && this.fechaExpiracion && this.codigoSeguridad) {
+      // Simulación del pago
+      window.alert('Pago de $5 realizado con éxito.');
+
+      // Llama al servicio para permitir añadir más libros
+      this.cartService.pagarPorMasLibros();
+    } else {
+      window.alert('Por favor, completa todos los campos de pago.');
+    }
   }
 }
