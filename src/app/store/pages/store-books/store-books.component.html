@@ -7,13 +7,9 @@
     <div class="credit-card mb-4 shadow">
       <div class="credit-card-details">
         <div class="credit-card-number text-center">
-          <h6> {{ numeroTarjeta.slice(-16) || 'XXXX' }}</h6>
+          <h6>{{ (numeroTarjeta ? numeroTarjeta.slice(-18) : 'XXXX') }}</h6>
         </div>
         <div class="credit-card-info">
-          <div>
-            <small>Titular</small>
-            <p class="m-0">Nombre Apellido</p>
-          </div>
           <div>
             <small>Expira</small>
             <p class="m-0">{{ fechaExpiracion || 'MM/AA' }}</p>
@@ -97,8 +93,7 @@
             <p><strong>Precio:</strong> {{ book.precio }}</p>
             <button (click)="addToCart(book)" class="btn btn-primary">Añadir al carrito</button>
             <a (click)="goToDetails(book.id)" class="btn btn-primary">Ver detalles</a>
-            <button (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>
-          </div>
+            <button [disabled]="!cartService.isBookPaid(book)" (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>           </div>
         </div>
       </div>
     </div>
