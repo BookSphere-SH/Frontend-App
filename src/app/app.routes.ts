@@ -8,7 +8,7 @@ import { StoreBooksComponent } from "./store/pages/store-books/store-books.compo
 import { PaymentPageComponent } from './store/pages/payment-page/payment-page.component';
 import { AddBookComponent } from './store/components/add-book/add-book.component';
 import { LibraryComponent } from './store/pages/library/library.component';  // Nueva ruta de LibraryComponent
-import { CommunityComponent } from './public/pages/community/community.component';
+import { CommunityComponent } from './community/pages/community.component';
 
 export const routes: Routes = [
 

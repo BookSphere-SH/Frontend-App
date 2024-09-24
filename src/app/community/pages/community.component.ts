@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GroupCardComponent } from '../../../store/components/group-card/group-card.component';
+import { GroupCardComponent } from '../components/group-card/group-card.component';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
