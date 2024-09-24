@@ -211,37 +211,8 @@
           "date": "2023-09-18 05:00 PM"
         }
       ]
-    },
-    {
-      "id": "8",
-      "titulo": "Deep Learning with Python",
-      "autor": "François Chollet",
-      "descripcion": "Escrito por François Chollet, creador de la biblioteca Keras, este libro ofrece una introducción clara y práctica al aprendizaje profundo (deep learning) con Python. Es ideal para aquellos que desean aprender a implementar redes neuronales profundas.",
-      "resumen": "A lo largo del libro, Chollet proporciona ejemplos prácticos y tutoriales que cubren temas como redes neuronales convolucionales, aprendizaje supervisado y no supervisado, y cómo aplicar estas técnicas a problemas del mundo real como el reconocimiento de imágenes y el procesamiento del lenguaje natural.",
-      "fecha_publicacion": "2021-01-21",
-      "isbn": "978-1617296868",
-      "formato": "Tapa blanda",
-      "precio": "$37.99",
-      "categoria": "Inteligencia Artificial",
-      "ruta_archivo": "https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617296864",
-      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Publication116/v4/45/d7/9f/45d79f50-fcb4-ab23-8bc0-65e4abc144d8/9781638350095.jpg/1200x1200wz.jpg",
-      "comments": [
-        {
-          "id": 1,
-          "username": "Luisa Castillo",
-          "content": "Perfecto para los que quieren entrar en el mundo del deep learning. Los ejemplos son muy claros y aplicables.",
-          "rating": 5,
-          "date": "2023-09-19 03:15 PM"
-        },
-        {
-          "id": 2,
-          "username": "Manuel Rivera",
-          "content": "El libro explica bien los conceptos, pero algunos ejemplos pueden ser difíciles para principiantes totales.",
-          "rating": 4,
-          "date": "2023-09-18 07:45 PM"
-        }
-      ]
     }
+   
 
   ]
 }
