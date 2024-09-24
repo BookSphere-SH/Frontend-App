@@ -181,37 +181,8 @@
           "date": "2023-09-16 06:00 PM"
         }
       ]
-    },
-    {
-      "id": "7",
-      "titulo": "The Pragmatic Programmer: Your Journey to Mastery",
-      "autor": "Dave Thomas y Andy Hunt",
-      "descripcion": "Una obra clásica en el mundo del desarrollo de software que ofrece consejos prácticos y principios fundamentales para programadores de todos los niveles. Escrito por Dave Thomas y Andy Hunt, este libro enseña cómo ser un programador más eficiente y adaptable.",
-      "resumen": "Desde la escritura de código limpio hasta la gestión de proyectos, The Pragmatic Programmer cubre una amplia gama de temas importantes para los desarrolladores. Cada capítulo está lleno de anécdotas y ejemplos que ayudan a mejorar las habilidades de programación en la vida real.",
-      "fecha_publicacion": "2019-09-13",
-      "isbn": "978-0135957059",
-      "formato": "Tapa blanda",
-      "precio": "$37.99",
-      "categoria": "Programación",
-      "ruta_archivo": "https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052",
-      "portada": "https://m.media-amazon.com/images/I/41as+WafrFL._SX404_BO1,204,203,200_.jpg",
-      "comments": [
-        {
-          "id": 1,
-          "username": "Carlos Vargas",
-          "content": "Este libro cambió completamente mi enfoque sobre cómo escribir y gestionar código. Altamente recomendado.",
-          "rating": 5,
-          "date": "2023-09-19 12:00 PM"
-        },
-        {
-          "id": 2,
-          "username": "Silvia Delgado",
-          "content": "Un libro con consejos prácticos y aplicables, ideal para programadores de todos los niveles.",
-          "rating": 4,
-          "date": "2023-09-18 05:00 PM"
-        }
-      ]
     }
+   
    
 
   ]
