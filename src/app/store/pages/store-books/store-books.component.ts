@@ -6,7 +6,7 @@ import { BooksService } from '../../services/books.service';
 import { Book } from '../../model/book-entity/book.entity';
 import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
-import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
+import { TranslateModule } from '@ngx-translate/core';  
 
 @Component({
   selector: 'app-store-books',
