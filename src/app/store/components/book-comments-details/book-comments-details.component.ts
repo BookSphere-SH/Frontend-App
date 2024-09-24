@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';  // Añadir Router
+import { ActivatedRoute, Router } from '@angular/router';  
 import { BooksService } from '../../services/books.service';
 import { Book } from '../../model/book-entity/book.entity';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
+import { TranslateModule } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-book-comments-details',
