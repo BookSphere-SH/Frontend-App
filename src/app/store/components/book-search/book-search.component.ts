@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgForOf, NgIf, CommonModule } from '@angular/common'; // Agrega CommonModule aquí
-import { Book } from '../../model/book-entity/book.entity';  // Ajusta la ruta si es necesario
+import { NgForOf, NgIf, CommonModule } from '@angular/common'; 
+import { Book } from '../../model/book-entity/book.entity';  
 import { BooksService } from '../../services/books.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { BooksService } from '../../services/books.service';
   standalone: true,
   templateUrl: './book-search.component.html',
   styleUrls: ['./book-search.component.css'],
-  imports: [FormsModule, NgForOf, NgIf, CommonModule]  // Agrega CommonModule aquí
+  imports: [FormsModule, NgForOf, NgIf, CommonModule]  
 })
 export class BookSearchComponent {
   searchTitle: string = '';
