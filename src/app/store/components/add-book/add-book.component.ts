@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { BooksService } from '../../services/books.service';  // Asegúrate de que la ruta es correcta
+import { BooksService } from '../../services/books.service';  
 import { Book } from '../../model/book-entity/book.entity';
-import { FormsModule } from '@angular/forms';  // Asegúrate de importar FormsModule si usas [(ngModel)]
-import { TranslateService } from '@ngx-translate/core';  // Importa TranslateService
-import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
+import { FormsModule } from '@angular/forms';  
+import { TranslateService } from '@ngx-translate/core';  
+import { TranslateModule } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-add-book',
