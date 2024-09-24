@@ -8,7 +8,7 @@
       </td>
       <td class="align-middle">
         <strong>{{ item.book.titulo }}</strong>
-        <p><strong>Precio:</strong> {{ item.book.precio }}</p>
+        <p><strong>Precio:</strong> ${{ item.book.precio| number:'1.2-2' }}</p>
       </td>
       <td class="align-middle">
         <button class="btn btn-danger" (click)="removeFromCart(item.book.id)">Eliminar</button>

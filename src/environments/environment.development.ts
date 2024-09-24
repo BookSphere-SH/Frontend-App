@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-    serverBasePath: "http://localhost:60939",
+    serverBasePath: "https://my-json-server.typicode.com/BookSphere-SH/Front-App/db",
   firebaseConfig: {
     apiKey: "AIzaSyDCwWtqyUdj-WGlM9vImnlwogT5UjeE-ms",
       authDomain: "booksphere-430ff.firebaseapp.com",

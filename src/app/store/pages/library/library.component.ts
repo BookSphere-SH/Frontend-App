@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { Book } from '../../model/book-entity/book.entity';
 import { BooksService } from '../../services/books.service';
 import { CartService } from '../../services/cart.service';
@@ -10,14 +11,17 @@ import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
   standalone: true,
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, FormsModule]  // Añadir FormsModule aquí
 })
 export class LibraryComponent implements OnInit {
   library: Book[] = [];
+  numeroTarjeta: string = '';
+  fechaExpiracion: string = '';
+  codigoSeguridad: string = '';
 
   constructor(
     private booksService: BooksService,
-    private cartService: CartService
+    public cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -49,16 +53,22 @@ export class LibraryComponent implements OnInit {
     this.showNotification('Libro añadido al carrito');
   }
 
-  // Ver detalles del libro
-  goToDetails(bookId: number): void {
-    window.location.href = `/books/${bookId}`;
-  }
-
   // Eliminar libro de la biblioteca
   removeFromLibrary(bookId: number): void {
     this.library = this.library.filter(book => book.id !== bookId);
     this.updateLocalStorage();
     this.showNotification('Libro eliminado de la biblioteca');
+  }
+
+  // Método para procesar el pago de $5
+  procesarPago(): void {
+    // Aquí puedes añadir la lógica para procesar el pago
+    if (this.numeroTarjeta && this.fechaExpiracion && this.codigoSeguridad) {
+      this.cartService.pagarPorMasLibros();  // Resetea el contador en el servicio
+      this.showNotification('Has pagado $5 y puedes agregar más libros.');
+    } else {
+      this.showNotification('Por favor, completa todos los datos para procesar el pago.');
+    }
   }
 
   // Mostrar notificación personalizada
@@ -72,4 +82,7 @@ export class LibraryComponent implements OnInit {
       notificationElement.remove();
     }, 3000);  // Eliminar notificación después de 3 segundos
   }
+   goToDetails(bookId: number): void {
+      window.location.href = `/books/${bookId}`;
+    }
 }

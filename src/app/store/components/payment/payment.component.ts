@@ -37,6 +37,7 @@ export class PaymentComponent implements OnInit {
     }
   }
 
+  // Validar los campos de pago
   validarPago(item: CartItem): boolean {
     if (item.metodoPago === 'credit-card') {
       return !!item.numeroTarjeta && !!item.fechaExpiracion && !!item.codigoSeguridad;
@@ -51,18 +52,32 @@ export class PaymentComponent implements OnInit {
     return true;
   }
 
-  // Método para actualizar el precio cuando se cambia el formato
+  // Función para actualizar el precio cuando se cambia el formato
   actualizarPrecio(item: CartItem): number {
+    // Si el formato es "físico", añadimos $8 al precio
     if (item.formato === 'físico') {
-      return item.book.precio + 8;  // Precio + $8 por formato físico
+      return item.book.precio + 8;  // Añadir $8 si es formato físico
     }
+    // Si es formato digital, solo devolver el precio original
     return item.book.precio;
   }
 
-  // Calcular el total del carrito
+
+  // Calcular el total del carrito con el ajuste de precio por formato físico
   getTotal(): number {
     return this.cartItems.reduce((total, item) => {
-      return total + this.actualizarPrecio(item);
+      return total + this.actualizarPrecio(item);  // Llamar a la función de actualización de precio
     }, 0);
+  }
+
+
+
+  // Añadir directamente a la biblioteca si el libro es gratuito
+  addToLibrary(item: CartItem): void {
+    this.cartService.addToLibrary(item.book);
+    this.paymentSuccess = true;
+    setTimeout(() => {
+      this.paymentSuccess = false;
+    }, 3000);
   }
 }

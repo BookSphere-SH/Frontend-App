@@ -34,3 +34,8 @@ button[disabled] {
   max-width: 200px;  /* Ajusta el tamaño máximo del contenedor */
   margin: 0 auto;  /* Centra el contenedor de imágenes */
 }
+.payment-icon {
+  width: 50px;  /* Ajusta el tamaño según sea necesario */
+  margin-right: 10px;
+}
+
