@@ -3,7 +3,7 @@ import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
+import { TranslateModule } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-payment',
