@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
+import { FormsModule } from '@angular/forms'; 
 import { Book } from '../../model/book-entity/book.entity';
 import { BooksService } from '../../services/books.service';
 import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
-import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
+import { TranslateModule } from '@ngx-translate/core';  
 
 @Component({
   selector: 'app-library',
   standalone: true,
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.css'],
-  imports: [CommonModule, FormsModule, TranslateModule]  // Añadir FormsModule aquí
+  imports: [CommonModule, FormsModule, TranslateModule]  
 })
 export class LibraryComponent implements OnInit {
   library: Book[] = [];
