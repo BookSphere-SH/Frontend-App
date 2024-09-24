@@ -151,8 +151,97 @@
           "date": "2023-09-18 02:45 PM"
         }
       ]
+    },
+    {
+      "id": "6",
+      "titulo": "El algoritmo maestro: Cómo la búsqueda del algoritmo definitivo remodelará nuestro mundo",
+      "autor": "Pedro Domingos",
+      "descripcion": "Escrito por Pedro Domingos, este libro ofrece una fascinante exploración del aprendizaje automático y cómo los algoritmos están transformando industrias enteras, desde la medicina hasta las finanzas.",
+      "resumen": "Domingos presenta las cinco corrientes principales del aprendizaje automático y explica cómo se pueden combinar en lo que él llama el 'algoritmo maestro', un algoritmo que podría aprender cualquier tarea humana. Una lectura esencial para cualquiera interesado en la inteligencia artificial y su impacto en el mundo.",
+      "fecha_publicacion": "2021-01-12",
+      "isbn": "978-0465065707",
+      "formato": "Tapa blanda",
+      "precio": "$10.00",
+      "categoria": "Inteligencia Artificial",
+      "ruta_archivo": "https://archive.org/details/the-master-algorithm",
+      "portada": "https://cdn.bookey.app/files/publish-book/the-master-algorithm.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "María Rojas",
+          "content": "Una visión increíble del futuro de la inteligencia artificial. Explica temas complejos de manera sencilla.",
+          "rating": 5,
+          "date": "2023-09-17 09:30 AM"
+        },
+        {
+          "id": 2,
+          "username": "Jorge Paredes",
+          "content": "Interesante, aunque algunas partes del libro son demasiado técnicas para quienes no están familiarizados con el aprendizaje automático.",
+          "rating": 4,
+          "date": "2023-09-16 06:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "titulo": "The Pragmatic Programmer: Your Journey to Mastery",
+      "autor": "Dave Thomas y Andy Hunt",
+      "descripcion": "Una obra clásica en el mundo del desarrollo de software que ofrece consejos prácticos y principios fundamentales para programadores de todos los niveles. Escrito por Dave Thomas y Andy Hunt, este libro enseña cómo ser un programador más eficiente y adaptable.",
+      "resumen": "Desde la escritura de código limpio hasta la gestión de proyectos, The Pragmatic Programmer cubre una amplia gama de temas importantes para los desarrolladores. Cada capítulo está lleno de anécdotas y ejemplos que ayudan a mejorar las habilidades de programación en la vida real.",
+      "fecha_publicacion": "2019-09-13",
+      "isbn": "978-0135957059",
+      "formato": "Tapa blanda",
+      "precio": "$37.99",
+      "categoria": "Programación",
+      "ruta_archivo": "https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052",
+      "portada": "https://m.media-amazon.com/images/I/41as+WafrFL._SX404_BO1,204,203,200_.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Carlos Vargas",
+          "content": "Este libro cambió completamente mi enfoque sobre cómo escribir y gestionar código. Altamente recomendado.",
+          "rating": 5,
+          "date": "2023-09-19 12:00 PM"
+        },
+        {
+          "id": 2,
+          "username": "Silvia Delgado",
+          "content": "Un libro con consejos prácticos y aplicables, ideal para programadores de todos los niveles.",
+          "rating": 4,
+          "date": "2023-09-18 05:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "titulo": "Deep Learning with Python",
+      "autor": "François Chollet",
+      "descripcion": "Escrito por François Chollet, creador de la biblioteca Keras, este libro ofrece una introducción clara y práctica al aprendizaje profundo (deep learning) con Python. Es ideal para aquellos que desean aprender a implementar redes neuronales profundas.",
+      "resumen": "A lo largo del libro, Chollet proporciona ejemplos prácticos y tutoriales que cubren temas como redes neuronales convolucionales, aprendizaje supervisado y no supervisado, y cómo aplicar estas técnicas a problemas del mundo real como el reconocimiento de imágenes y el procesamiento del lenguaje natural.",
+      "fecha_publicacion": "2021-01-21",
+      "isbn": "978-1617296868",
+      "formato": "Tapa blanda",
+      "precio": "$37.99",
+      "categoria": "Inteligencia Artificial",
+      "ruta_archivo": "https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617296864",
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Publication116/v4/45/d7/9f/45d79f50-fcb4-ab23-8bc0-65e4abc144d8/9781638350095.jpg/1200x1200wz.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "username": "Luisa Castillo",
+          "content": "Perfecto para los que quieren entrar en el mundo del deep learning. Los ejemplos son muy claros y aplicables.",
+          "rating": 5,
+          "date": "2023-09-19 03:15 PM"
+        },
+        {
+          "id": 2,
+          "username": "Manuel Rivera",
+          "content": "El libro explica bien los conceptos, pero algunos ejemplos pueden ser difíciles para principiantes totales.",
+          "rating": 4,
+          "date": "2023-09-18 07:45 PM"
+        }
+      ]
     }
-    
 
   ]
 }
