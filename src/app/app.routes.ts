@@ -8,7 +8,7 @@ import { StoreBooksComponent } from "./store/pages/store-books/store-books.compo
 import { PaymentPageComponent } from './store/pages/payment-page/payment-page.component';
 import { AddBookComponent } from './store/components/add-book/add-book.component';
 import { LibraryComponent } from './store/pages/library/library.component';  // Nueva ruta de LibraryComponent
-
+import { BookCommentsDetailsComponent } from './store/components/book-comments-details/book-comments-details.component';
 export const routes: Routes = [
 
 
@@ -20,5 +20,5 @@ export const routes: Routes = [
     { path: '', redirectTo: 'store', pathMatch: 'full' },
       { path: 'search', component: BookSearchComponent },
 
-    { path: 'books/:id', component: BookDetailsComponent },
+    { path: 'book/:id', component: BookDetailsComponent },
     { path: '**', component: PageNotFoundComponent }];

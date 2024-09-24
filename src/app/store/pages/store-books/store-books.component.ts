@@ -6,13 +6,14 @@ import { BooksService } from '../../services/books.service';
 import { Book } from '../../model/book-entity/book.entity';
 import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
+import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
 
 @Component({
   selector: 'app-store-books',
   standalone: true,
   templateUrl: './store-books.component.html',
   styleUrls: ['./store-books.component.css'],
-  imports: [CommonModule, FormsModule, RouterModule]
+  imports: [CommonModule, FormsModule, RouterModule, TranslateModule]
 })
 export class StoreBooksComponent implements OnInit {
   books: Book[] = [];
@@ -31,10 +32,16 @@ export class StoreBooksComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.booksService.getAllBooks().subscribe((data: Book[]) => {
-      this.books = data;
-      this.noResults = this.books.length === 0;
+    this.booksService.getAllBooks().subscribe((data: any) => {
+      console.log('Datos recibidos de la API:', data);  // Imprimir los datos para verificar
+      if (data.book && Array.isArray(data.book)) {
+        this.books = data.book;  // Accede al arreglo de libros en 'data.book'
+      } else {
+        console.error('Error: La respuesta no contiene un arreglo de libros, es:', data);
+        this.books = [];  // Inicializa como un arreglo vacío si no hay libros
+      }
     });
+
   }
 
   filteredBooks() {
@@ -62,7 +69,7 @@ export class StoreBooksComponent implements OnInit {
   }
 
   goToDetails(bookId: number): void {
-    window.location.href = `/books/${bookId}`;
+    window.location.href = `/book/${bookId}`;
   }
 
   // Método para procesar el pago

@@ -1,34 +1,33 @@
-
 <div class="container mt-5">
   <div class="row">
     <!-- Mostrar input para buscar por título y categoría -->
     <div class="form-group">
-      <label for="title">Título:</label>
+      <label for="title">{{ 'titleSearchLabel' | translate }}</label>
       <input
         type="text"
         class="form-control"
         id="title"
-        placeholder="Buscar por título..."
+        placeholder="{{ 'searchByTitlePlaceholder' | translate }}"
         [(ngModel)]="filterTitle"
       >
     </div>
 
     <div class="form-group">
-      <label for="category">Categoría:</label>
+      <label for="category">{{ 'categoryLabel' | translate }}</label>
       <select
         class="form-control"
         id="category"
         [(ngModel)]="searchCategory"
       >
-        <option value="">Seleccionar categoría...</option>
-        <option value="realismo mágico">Realismo mágico</option>
-        <option value="distopía">Distopía</option>
-        <option value="literatura estadounidense">Literatura estadounidense</option>
-        <option value="novela clásica">Novela clásica</option>
-        <option value="programación">Programación</option>
-        <option value="inteligencia artificial">Inteligencia Artificial</option>
-        <option value="psicología financiera">Psicología financiera</option>
-        <option value="historia">Historia</option>
+        <option value="">{{ 'selectCategoryPlaceholder' | translate }}</option>
+        <option value="realismo mágico">{{ 'categoryMagicalRealism' | translate }}</option>
+        <option value="distopía">{{ 'categoryDystopia' | translate }}</option>
+        <option value="literatura estadounidense">{{ 'categoryAmericanLiterature' | translate }}</option>
+        <option value="novela clásica">{{ 'categoryClassicNovel' | translate }}</option>
+        <option value="programación">{{ 'categoryProgramming' | translate }}</option>
+        <option value="inteligencia artificial">{{ 'categoryAI' | translate }}</option>
+        <option value="psicología financiera">{{ 'categoryFinancialPsychology' | translate }}</option>
+        <option value="historia">{{ 'categoryHistory' | translate }}</option>
       </select>
       <br>
     </div>
@@ -38,22 +37,21 @@
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let book of filteredBooks()">
         <div class="card h-100 shadow-lg">
-          <img [src]="book.portada" class="card-img-top" alt="Portada de {{ book.titulo }}" style="height: 300px; object-fit: cover;">
+          <img [src]="book.portada" class="card-img-top" alt="{{ 'bookCoverAlt' | translate:{title: book.titulo} }}" style="height: 300px; object-fit: cover;">
           <div class="card-body">
             <h5 class="card-title">{{ book.titulo }}</h5>
             <p class="card-text">{{ book.resumen }}</p>
-            <p><strong>Precio:</strong>  ${{ book.precio| number:'1.2-2' }}</p>
-            <button (click)="addToCart(book)" class="btn btn-primary">Añadir al carrito</button>
-            <a (click)="goToDetails(book.id)" class="btn btn-primary">Ver detalles</a>
-            <button [disabled]="!cartService.isBookPaid(book)" (click)="addToLibrary(book)" class="btn btn-success">Añadir a la biblioteca</button>           </div>
+            <p><strong>{{ 'priceLabelCart' | translate }}</strong> ${{ book.precio | number:'1.2-2' }}</p>
+            <button (click)="addToCart(book)" class="btn btn-primary">{{ 'addToCartButton' | translate }}</button>
+            <a (click)="goToDetails(book.id)" class="btn btn-primary">{{ 'viewDetailsButton' | translate }}</a>
+            <button [disabled]="!cartService.isBookPaid(book)" (click)="addToLibrary(book)" class="btn btn-success">{{ 'addToLibraryButton' | translate }}</button>
+          </div>
         </div>
       </div>
     </div>
 
-
-
     <div *ngIf="noResults" class="alert alert-warning">
-      No se encontraron libros para la búsqueda.
+      {{ 'noResultsMessage' | translate }}
     </div>
   </div>
 </div>

@@ -3,13 +3,14 @@ import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
 
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, TranslateModule]
 })
 export class PaymentComponent implements OnInit {
   cartItems: CartItem[] = [];

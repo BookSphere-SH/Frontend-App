@@ -11,12 +11,13 @@ import { NgModule } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { CartService } from './store/services/cart.service';  // Verifica la ruta
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, LanguageSwitcherComponent, NgIf, MatIconModule],
+  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, LanguageSwitcherComponent, NgIf, MatIconModule, TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

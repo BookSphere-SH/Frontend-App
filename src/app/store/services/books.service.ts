@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Book } from '../model/book-entity/book.entity';
+import { environment } from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
-  private apiUrl = 'http://localhost:3000/book';  // Asegúrate de que esta URL sea correcta
+  protected apiUrl = `${environment.serverBasePath}`;
   filteredBooks: Book[] = [];  // Aquí almacenamos los libros filtrados
 
   private library: Book[] = [];  // Arreglo para almacenar la biblioteca
@@ -21,7 +22,7 @@ export class BooksService {
 
   // Obtener un libro por su ID
   getBookById(id: number): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/${id}`);
+    return this.http.get<Book>(`https://my-json-server.typicode.com/BookSphere-SH/Front-App/book/${id}`);
   }
 
   // Obtener todos los libros de la biblioteca

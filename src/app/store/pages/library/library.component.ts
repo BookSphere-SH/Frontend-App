@@ -5,13 +5,14 @@ import { Book } from '../../model/book-entity/book.entity';
 import { BooksService } from '../../services/books.service';
 import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
+import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
 
 @Component({
   selector: 'app-library',
   standalone: true,
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.css'],
-  imports: [CommonModule, FormsModule]  // Añadir FormsModule aquí
+  imports: [CommonModule, FormsModule, TranslateModule]  // Añadir FormsModule aquí
 })
 export class LibraryComponent implements OnInit {
   library: Book[] = [];
@@ -82,7 +83,7 @@ export class LibraryComponent implements OnInit {
       notificationElement.remove();
     }, 3000);  // Eliminar notificación después de 3 segundos
   }
-   goToDetails(bookId: number): void {
-      window.location.href = `/books/${bookId}`;
-    }
+    goToDetails(bookId: number): void {
+       window.location.href = `/book/${bookId}`;
+     }
 }

@@ -1,9 +1,9 @@
 <div class="container payment-page mt-5" *ngIf="cartItems.length > 0">
-  <h1>Proceso de pago</h1>
+  <h1>{{ 'paymentProcessTitle' | translate }}</h1>
 
   <!-- Mostrar el total del pago antes del desglose -->
   <div class="text-center mt-4">
-    <h2>Total a pagar: ${{ getTotal()   | number:'1.2-2'}}</h2> <!-- Asegura que se muestre con formato numérico -->
+    <h2>{{ 'totalToPay' | translate }} ${{ getTotal() | number:'1.2-2' }}</h2> <!-- Asegura que se muestre con formato numérico -->
   </div>
 
   <!-- Recorremos los ítems del carrito -->
@@ -11,76 +11,78 @@
     <div class="row">
       <!-- Mostrar información del libro -->
       <div class="col-lg-6 text-center book-info">
-        <img [src]="item.book.portada" alt="Portada del libro" class="img-fluid payment-cover">
+        <img [src]="item.book.portada" alt="{{ 'bookCoverAlt' | translate }}" class="img-fluid payment-cover">
         <h3 class="mt-3">{{ item.book.titulo }}</h3>
-        <p><strong>Precio:</strong>  ${{ actualizarPrecio(item)  | number:'1.2-2' }}</p>
+        <p><strong>{{ 'priceLabel' | translate }}</strong> ${{ actualizarPrecio(item) | number:'1.2-2' }}</p>
 
         <!-- Selector para elegir formato físico o digital -->
         <div class="form-group" *ngIf="item.book">
-          <label for="formato-{{i}}">Formato:</label>
+          <label for="formato-{{i}}">{{ 'formatLabel' | translate }}</label>
           <select class="form-control" [(ngModel)]="item.formato">
-            <option value="físico">Físico</option>
-            <option value="digital">Digital</option>
+            <option value="físico">{{ 'physicalFormat' | translate }}</option>
+            <option value="digital">{{ 'digitalFormat' | translate }}</option>
           </select>
         </div>
       </div>
 
       <!-- Opciones de pago -->
       <div class="col-lg-6 payment-options">
-        <h3 class="mb-4">Opciones de Pago</h3>
+        <h3 class="mb-4">{{ 'paymentOptionsTitle' | translate }}</h3>
+
         <!-- Íconos de métodos de pago -->
         <div class="payment-icons mb-3">
           <img src="https://s.cafebazaar.ir/images/icons/com.bcp.bank.bcp-4c84096e-fa83-4dfd-9ebf-877f687ca726_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize" alt="BCP" class="payment-icon">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnDWQ6AGiLP2qsotOfDRgMqnc3fy5sGnKSZg&s" alt="Visa" class="payment-icon">
         </div>
+
         <div class="form-group">
-          <label for="paymentMethod-{{i}}">Método de Pago:</label>
+          <label for="paymentMethod-{{i}}">{{ 'paymentMethodLabel' | translate }}</label>
           <select class="form-control" id="paymentMethod-{{i}}" [(ngModel)]="item.metodoPago">
-            <option value="credit-card">Tarjeta de crédito</option>
-            <option value="bank-transfer">Transferencia bancaria</option>
+            <option value="credit-card">{{ 'creditCardOption' | translate }}</option>
+            <option value="bank-transfer">{{ 'bankTransferOption' | translate }}</option>
           </select>
         </div>
 
         <!-- Detalles de tarjeta de crédito -->
         <div *ngIf="item.metodoPago === 'credit-card'" class="mt-3">
-          <h5>Introduce los detalles de tu tarjeta</h5>
+          <h5>{{ 'creditCardDetails' | translate }}</h5>
 
           <!-- Formulario de tarjeta de crédito -->
           <div class="form-group">
-            <label for="numeroTarjeta-{{i}}">Número de tarjeta</label>
-            <input type="text" class="form-control" id="numeroTarjeta-{{i}}" placeholder="1234 5678 9012 3456" [(ngModel)]="item.numeroTarjeta" required maxlength="19">
+            <label for="numeroTarjeta-{{i}}">{{ 'creditCardNumberLabel' | translate }}</label>
+            <input type="text" class="form-control" id="numeroTarjeta-{{i}}" placeholder="{{ 'creditCardPlaceholder' | translate }}" [(ngModel)]="item.numeroTarjeta" required maxlength="19">
           </div>
 
           <div class="form-group mt-2">
-            <label for="fechaExpiracion-{{i}}">Fecha de expiración</label>
-            <input type="text" class="form-control" id="fechaExpiracion-{{i}}" placeholder="MM/AA" [(ngModel)]="item.fechaExpiracion" required maxlength="5">
+            <label for="fechaExpiracion-{{i}}">{{ 'expirationDateLabel' | translate }}</label>
+            <input type="text" class="form-control" id="fechaExpiracion-{{i}}" placeholder="{{ 'expirationDatePlaceholder' | translate }}" [(ngModel)]="item.fechaExpiracion" required maxlength="5">
           </div>
 
           <div class="form-group mt-2">
-            <label for="codigoSeguridad-{{i}}">Código de seguridad (CVV)</label>
-            <input type="text" class="form-control" id="codigoSeguridad-{{i}}" placeholder="123" [(ngModel)]="item.codigoSeguridad" required maxlength="3">
+            <label for="codigoSeguridad-{{i}}">{{ 'securityCodeLabel' | translate }}</label>
+            <input type="text" class="form-control" id="codigoSeguridad-{{i}}" placeholder="{{ 'securityCodePlaceholder' | translate }}" [(ngModel)]="item.codigoSeguridad" required maxlength="3">
           </div>
         </div>
 
         <!-- Instrucciones para transferencia bancaria -->
         <div *ngIf="item.metodoPago === 'bank-transfer'" class="mt-3">
-          <h5>Instrucciones para transferencia bancaria</h5>
-          <p>Realiza la transferencia al siguiente número de cuenta:</p>
+          <h5>{{ 'bankTransferInstructions' | translate }}</h5>
+          <p>{{ 'transferToAccount' | translate }}</p>
           <p><strong>1234 5678 9012 3456</strong></p>
-          <p>Envía el comprobante a: <strong>booksphere258&#64;gmail.com</strong></p>
+          <p>{{ 'sendReceiptTo' | translate }}: <strong>booksphere258&#64;gmail.com</strong></p>
         </div>
 
         <!-- Información de envío si el formato es físico -->
         <div *ngIf="item.formato === 'físico'" class="mt-3">
-          <h5>Detalles de envío</h5>
-          <input type="text" class="form-control mt-2" placeholder="Dirección" [(ngModel)]="item.direccionEnvio" required>
-          <input type="text" class="form-control mt-2" placeholder="Ciudad" [(ngModel)]="item.ciudadEnvio" required>
-          <input type="text" class="form-control mt-2" placeholder="País" [(ngModel)]="item.paisEnvio" required>
-          <input type="text" class="form-control mt-2" placeholder="Código postal" [(ngModel)]="item.codigoPostalEnvio" required>
+          <h5>{{ 'shippingDetails' | translate }}</h5>
+          <input type="text" class="form-control mt-2" placeholder="{{ 'addressPlaceholder' | translate }}" [(ngModel)]="item.direccionEnvio" required>
+          <input type="text" class="form-control mt-2" placeholder="{{ 'cityPlaceholder' | translate }}" [(ngModel)]="item.ciudadEnvio" required>
+          <input type="text" class="form-control mt-2" placeholder="{{ 'countryPlaceholder' | translate }}" [(ngModel)]="item.paisEnvio" required>
+          <input type="text" class="form-control mt-2" placeholder="{{ 'postalCodePlaceholder' | translate }}" [(ngModel)]="item.codigoPostalEnvio" required>
         </div>
 
         <!-- Botón de pago para cada libro -->
-        <button class="btn btn-success mt-3" (click)="procesarPago(item)" [disabled]="!validarPago(item)">Pagar</button>
+        <button class="btn btn-success mt-3" (click)="procesarPago(item)" [disabled]="!validarPago(item)">{{ 'payButton' | translate }}</button>
       </div>
     </div>
   </div>

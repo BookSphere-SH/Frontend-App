@@ -3,13 +3,14 @@ import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../model/cart-item-entity/cart-item.entity';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';  // Asegúrate de importar Router
+import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
   standalone: true,
-  imports: [CommonModule, CurrencyPipe]  // Asegúrate de importar CommonModule y CurrencyPipe
+  imports: [CommonModule, CurrencyPipe, TranslateModule]  // Asegúrate de importar CommonModule y CurrencyPipe
 })
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];

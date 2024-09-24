@@ -4,27 +4,27 @@
     <div class="col-md-4 mb-4" *ngFor="let book of library">
       <div class="card h-100 shadow-lg">
         <!-- Portada del libro -->
-        <img [src]="book.portada" class="card-img-top" alt="Portada de {{ book.titulo }}" style="height: 300px; object-fit: cover;">
+        <img [src]="book.portada" class="card-img-top" alt="{{ 'bookCoverAlt' | translate:{title: book.titulo} }}" style="height: 300px; object-fit: cover;">
         <div class="card-body">
           <!-- Título del libro -->
           <h5 class="card-title">{{ book.titulo }}</h5>
           <!-- Descripción del libro -->
           <p class="card-text">{{ book.descripcion }}</p>
           <!-- Precio del libro -->
-          <p><strong>Precio:</strong> ${{ book.precio| number:'1.2-2' }}</p>
+          <p><strong>{{ 'priceLabelCart' | translate }}</strong> ${{ book.precio | number:'1.2-2' }}</p>
           <!-- Botones de acción -->
-          <button (click)="addToCart(book)" class="btn btn-primary mb-2" [disabled]="cartService.additionalPaymentRequired">Añadir al carrito</button>
-          <a (click)="goToDetails(book.id)" class="btn btn-secondary mb-2">Ver detalles</a>
-          <button (click)="removeFromLibrary(book.id)" class="btn btn-danger">Eliminar</button>
+          <button (click)="addToCart(book)" class="btn btn-primary mb-2" [disabled]="cartService.additionalPaymentRequired">{{ 'addToCartButton' | translate }}</button>
+          <a (click)="goToDetails(book.id)" class="btn btn-secondary mb-2">{{ 'viewDetailsButton' | translate }}</a>
+          <button (click)="removeFromLibrary(book.id)" class="btn btn-danger">{{ 'removeButton' | translate }}</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<<div *ngIf="cartService.additionalPaymentRequired" class="mt-5 p-4 border rounded shadow bg-light">
-  <h5 class="text-center">Límite alcanzado</h5>
-  <p class="text-center">Has alcanzado el límite de 4 libros en tu biblioteca. Debes pagar <strong>$5</strong> En la tu libreria para añadir más libros.</p>
+<div *ngIf="cartService.additionalPaymentRequired" class="mt-5 p-4 border rounded shadow bg-light">
+  <h5 class="text-center">{{ 'limitReachedTitle' | translate }}</h5>
+  <p class="text-center">{{ 'limitReachedMessage' | translate }} <strong>$5</strong>.</p>
 
   <!-- Simulación de tarjeta de crédito -->
   <div class="credit-card-container mx-auto">
@@ -35,8 +35,8 @@
         </div>
         <div class="credit-card-info">
           <div>
-            <small>Expira</small>
-            <p class="m-0">{{ fechaExpiracion || 'MM/AA' }}</p>
+            <small>{{ 'expiresLabel' | translate }}</small>
+            <p class="m-0">{{ fechaExpiracion || 'MM/YY' }}</p>
           </div>
         </div>
       </div>
@@ -46,33 +46,33 @@
   <!-- Formulario de pago -->
   <form (ngSubmit)="procesarPago()" class="p-3">
     <div class="form-group mb-3">
-      <label for="numeroTarjeta">Número de Tarjeta</label>
-      <input type="text" id="numeroTarjeta" class="form-control" [(ngModel)]="numeroTarjeta" name="numeroTarjeta" required maxlength="16" placeholder="1234 5678 9101 1121">
+      <label for="numeroTarjeta">{{ 'creditCardNumberLabel' | translate }}</label>
+      <input type="text" id="numeroTarjeta" class="form-control" [(ngModel)]="numeroTarjeta" name="numeroTarjeta" required maxlength="16" placeholder="{{ 'creditCardPlaceholder' | translate }}">
     </div>
 
     <div class="row">
       <div class="col-md-6">
         <div class="form-group mb-3">
-          <label for="fechaExpiracion">Fecha de Expiración (MM/AA)</label>
-          <input type="text" id="fechaExpiracion" class="form-control" [(ngModel)]="fechaExpiracion" name="fechaExpiracion" required maxlength="5" placeholder="MM/AA">
+          <label for="fechaExpiracion">{{ 'expirationDateLabel' | translate }}</label>
+          <input type="text" id="fechaExpiracion" class="form-control" [(ngModel)]="fechaExpiracion" name="fechaExpiracion" required maxlength="5" placeholder="{{ 'expirationDatePlaceholder' | translate }}">
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="form-group mb-3">
-          <label for="codigoSeguridad">Código de Seguridad (CVV)</label>
-          <input type="text" id="codigoSeguridad" class="form-control" [(ngModel)]="codigoSeguridad" name="codigoSeguridad" required maxlength="3" placeholder="123">
+          <label for="codigoSeguridad">{{ 'securityCodeLabel' | translate }}</label>
+          <input type="text" id="codigoSeguridad" class="form-control" [(ngModel)]="codigoSeguridad" name="codigoSeguridad" required maxlength="3" placeholder="{{ 'securityCodePlaceholder' | translate }}">
         </div>
       </div>
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-warning w-100">Pagar $5</button>
+      <button type="submit" class="btn btn-warning w-100">{{ 'payButton' | translate }}</button>
     </div>
   </form>
 </div>
 
 <!-- Mensaje cuando no hay libros en la biblioteca -->
 <ng-template #noBooksMessage>
-  <p class="alert alert-warning text-center">No tienes libros en tu biblioteca.</p>
+  <p class="alert alert-warning text-center">{{ 'noBooksMessage' | translate }}</p>
 </ng-template>
