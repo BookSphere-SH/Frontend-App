@@ -9,9 +9,9 @@ import { TranslateService } from "@ngx-translate/core";
 import { LanguageSwitcherComponent } from "./public/pages/language-switcher/language-switcher.component";
 import { NgModule } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { CartService } from './store/services/cart.service';  // Verifica la ruta
+import { CartService } from './store/services/cart.service';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
+import { TranslateModule } from '@ngx-translate/core'; 
 
 
 @Component({
