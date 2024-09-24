@@ -27,3 +27,16 @@
 .card .datas .description{
     font-size: 1.2rem;
 }
+.join-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.join-btn:hover {
+  background-color: #45a049;
+}
+
