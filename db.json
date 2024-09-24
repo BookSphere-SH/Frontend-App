@@ -9,7 +9,7 @@
       "fecha_publicacion": "1967-06-05",
       "isbn": "978-0307474728",
       "formato": "Tapa blanda",
-      "precio": "$0.00",
+      "precio": 0.00,
       "categoria": "Realismo mágico",
       "ruta_archivo": "https://www.sev.gob.mx/clasesdesdecasa/documentos/c8cf01c83fcd163f06e727cabcff90ac100-a%C3%B1os-de-soledad-Gabriel-Garc%C3%ADa-Marquez.pdf",
       "portada": "https://images.cdn3.buscalibre.com/fit-in/360x360/61/8d/618d227e8967274cd9589a549adff52d.jpg",
@@ -40,7 +40,7 @@
       "fecha_publicacion": "1949-06-08",
       "isbn": "978-0451524935",
       "formato": "Tapa dura",
-      "precio": "$0.00",
+      "precio": 0.00,
       "categoria": "Distopía",
       "ruta_archivo": "https://ocw.uca.es/pluginfile.php/1485/mod_resource/content/1/1984.pdf",
       "portada": "https://www.laorquestafilosofica.com/wp-content/uploads/2018/01/externo-4c157cb101737ebd5e9f10f29aa31730.jpg",
@@ -71,7 +71,7 @@
       "fecha_publicacion": "1925-04-10",
       "isbn": "978-0743273565",
       "formato": "Tapa blanda",
-      "precio": "$0.00",
+      "precio": 0.00,
       "categoria": "Literatura estadounidense",
       "ruta_archivo": "https://www.imprentanacional.go.cr/editorialdigital/libros/literatura%20universal/el_gran_gatsby_edincr.pdf",
       "portada": "https://beta.acuedi.org/storage/books/cover/10411.pdf.jpg",
@@ -101,7 +101,7 @@
       "fecha_publicacion": "1960-07-11",
       "isbn": "978-0060935467",
       "formato": "Tapa dura",
-      "precio": "$0.00",
+      "precio": 0.00,
       "categoria": "Novela clásica",
       "ruta_archivo": "https://web.seducoahuila.gob.mx/biblioweb/upload/Harper,%20Lee%20-%20Matar%20Un%20Ruise%C3%B1or.pdf",
       "portada": "https://img.perlego.com/book-covers/3633976/9780063026032.jpg",
@@ -131,7 +131,7 @@
       "fecha_publicacion": "2022-07-15",
       "isbn": "978-1492052203",
       "formato": "Tapa dura",
-      "precio": "$30.00",
+      "precio": 30.00,
       "categoria": "Programación",
       "ruta_archivo": "https://refactoring.guru/es/design-patterns/book",
       "portada": "https://refactoring.guru/images/patterns/book/web-cover-es.png",
@@ -161,7 +161,7 @@
       "fecha_publicacion": "2021-01-12",
       "isbn": "978-0465065707",
       "formato": "Tapa blanda",
-      "precio": "$10.00",
+      "precio": 10.00,
       "categoria": "Inteligencia Artificial",
       "ruta_archivo": "https://archive.org/details/the-master-algorithm",
       "portada": "https://cdn.bookey.app/files/publish-book/the-master-algorithm.jpg",
@@ -182,8 +182,6 @@
         }
       ]
     }
-   
-   
 
   ]
 }
