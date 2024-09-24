@@ -1,23 +1,20 @@
 {
-  "filter": {
-    "label": "Filter",
-    "placeholder": "Enter text to filter"
-  },
-  "title": {
-    "students": "Students",
-    "add": "New Student",
-    "edit": "Edit Student"
-  },
-  "student": {
-    "id": "No.",
-    "name": "Name",
-    "age": "Age",
-    "address": "Address",
-    "actions": "Actions"
-  },
-  "footer": {
-    "rights": "Copyright © 2024 {{ api }}, All rights reserved",
-    "intro": "Developed ",
-    "author": "by {{ team }} Team"
-  }
+  "titleLabel": "Title",
+  "authorLabel": "Author",
+  "categoryLabel": "Category",
+  "addBookButton": "Add to the Library",
+  "bookCoverAlt": "Cover of {{title}}",
+  "descriptionLabel": "Description:",
+  "summaryLabel": "Summary:",
+  "priceLabel": "Price:",
+  "formatAvailableLabel": "Available format:",
+  "physicalFormatButton": "Physical",
+  "digitalFormatButton": "Digital",
+  "orLabel": "or",
+  "userCommentsLabel": "User Comments",
+  "dateLabel": "Date:",
+  "commentLabel": "Comment:",
+  "ratingLabel": "Rating:",
+  "noCommentsLabel": "No comments available for this book.",
+  "viewDetailsButton": "View Details"
 }

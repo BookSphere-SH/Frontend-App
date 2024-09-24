@@ -1,15 +1,15 @@
 <form (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="title">Título</label>
+    <label for="title">{{ 'titleLabel' | translate }}</label>
     <input type="text" id="title" [(ngModel)]="newBook.titulo" name="titulo" class="form-control" required>
   </div>
   <div class="form-group">
-    <label for="author">Autor</label>
+    <label for="author">{{ 'authorLabel' | translate }}</label>
     <input type="text" id="author" [(ngModel)]="newBook.autor" name="autor" class="form-control" required>
   </div>
   <div class="form-group">
-    <label for="category">Categoría</label>
+    <label for="category">{{ 'categoryLabel' | translate }}</label>
     <input type="text" id="category" [(ngModel)]="newBook.categoria" name="categoria" class="form-control" required>
   </div>
-  <button type="submit" class="btn btn-primary">Añadir a la Biblioteca</button>
+  <button type="submit" class="btn btn-primary">{{ 'addBookButton' | translate }}</button>
 </form>

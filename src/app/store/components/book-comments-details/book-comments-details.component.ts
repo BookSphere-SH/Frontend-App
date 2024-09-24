@@ -4,10 +4,12 @@ import { BooksService } from '../../services/books.service';
 import { Book } from '../../model/book-entity/book.entity';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
+
 @Component({
   selector: 'app-book-comments-details',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, TranslateModule],
   templateUrl: './book-comments-details.component.html',
   styleUrl: './book-comments-details.component.css'
 })

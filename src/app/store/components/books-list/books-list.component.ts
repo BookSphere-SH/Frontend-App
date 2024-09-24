@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BooksService } from '../../services/books.service';
 import { Book } from '../../model/book-entity/book.entity';
+import { TranslateModule } from '@ngx-translate/core';  // Importa el TranslateModule
 
 @Component({
   selector: 'app-book-search',

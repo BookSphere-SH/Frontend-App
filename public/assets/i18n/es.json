@@ -1,23 +1,20 @@
 {
-  "filter": {
-    "label": "Filtrar",
-    "placeholder": "Digite texto a filtrar"
-  },
-  "title": {
-    "students": "Estudiantes",
-    "add": "Nuevo estudiante",
-    "edit": "Editar estudiante"
-  },
-  "student": {
-    "id": "Núm.",
-    "name": "Nombre",
-    "age": "Edad",
-    "address": "Dirección",
-    "actions": "Acciones"
-  },
-  "footer": {
-    "rights": "Derechos de autor © 2024 {{ api }}, Todos los derechos reservados",
-    "intro": "Desarrollado ",
-    "author": "por el Equipo {{ team }}"
-  }
+  "titleLabel": "Título",
+  "authorLabel": "Autor",
+  "categoryLabel": "Categoría",
+  "addBookButton": "Añadir a la Biblioteca",
+  "bookCoverAlt": "Portada de {{title}}",
+  "descriptionLabel": "Descripción:",
+  "summaryLabel": "Resumen:",
+  "priceLabel": "Precio:",
+  "formatAvailableLabel": "Formato disponible:",
+  "physicalFormatButton": "Físico",
+  "digitalFormatButton": "Digital",
+  "orLabel": "o",
+  "userCommentsLabel": "Comentarios de los usuarios",
+  "dateLabel": "Fecha:",
+  "commentLabel": "Comentario:",
+  "ratingLabel": "Calificación:",
+  "noCommentsLabel": "No hay comentarios disponibles para este libro.",
+  "viewDetailsButton": "Ver detalles"
 }
