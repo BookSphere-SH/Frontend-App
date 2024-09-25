@@ -1,19 +1,32 @@
-{
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+[
+  {
+    "nombre_grupo": "Amantes de la Ficción",
+    "descripcion": "Un grupo para discutir las últimas novelas de ficción y compartir recomendaciones de libros.",
+    "cantidad_miembros": 4520,
+    "imagen": "https://example.com/imagenes/grupo1.jpg"
+  },
+  {
+    "nombre_grupo": "Ciencia y Tecnología",
+    "descripcion": "Discute libros sobre avances científicos y tecnológicos, desde la IA hasta el espacio.",
+    "cantidad_miembros": 3760,
+    "imagen": "https://example.com/imagenes/grupo2.jpg"
+  },
+  {
+    "nombre_grupo": "Clásicos de la Literatura",
+    "descripcion": "Un espacio para debatir y explorar los grandes clásicos literarios que han marcado la historia.",
+    "cantidad_miembros": 2940,
+    "imagen": "https://example.com/imagenes/grupo3.jpg"
+  },
+  {
+    "nombre_grupo": "Novelas Gráficas y Cómics",
+    "descripcion": "Para los amantes de los cómics y las novelas gráficas, este es el lugar perfecto para ti.",
+    "cantidad_miembros": 3125,
+    "imagen": "https://example.com/imagenes/grupo4.jpg"
+  },
+  {
+    "nombre_grupo": "Poesía Contemporánea",
+    "descripcion": "Comparte y descubre nuevas voces en la poesía contemporánea de todo el mundo.",
+    "cantidad_miembros": 1820,
+    "imagen": "https://example.com/imagenes/grupo5.jpg"
   }
-}
+]
